@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication/authentication.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,20 @@ export class LoginComponent implements OnInit {
   usuario = '';
   senha = '';
 
-  constructor(private auth: AuthenticationService) {}
+  constructor(
+    private auth: AuthenticationService,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit(): void {}
 
   login() {
     this.auth.autenticar(this.usuario, this.senha).subscribe(
       () => {
-        console.log('Autenticado com Sucesso!');
+        this.spinner.show();
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1000);
       },
       (error) => {
         alert('Usuário ou Senha Inválidos!');
