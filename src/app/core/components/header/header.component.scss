@@ -1,0 +1,11 @@
+header {
+  background: #fff;
+  padding: 0.5rem 0;
+  & .header-title {
+    & h3 {
+      color: #000;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}

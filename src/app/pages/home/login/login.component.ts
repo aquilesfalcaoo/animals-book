@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication/authentication.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthenticationService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {}
@@ -25,9 +27,16 @@ export class LoginComponent implements OnInit {
         setTimeout(() => {
           this.spinner.hide();
         }, 1000);
+        this.toastr.success('Logado com Sucesso!', 'Bem Vindo!', {
+          timeOut: 2500,
+          progressBar: true,
+        });
       },
       (error) => {
-        alert('Usuário ou Senha Inválidos!');
+        this.toastr.error('Tente Novamente!', 'Usuário ou Senha Inválidos!', {
+          timeOut: 2500,
+          progressBar: true,
+        });
         console.log(error);
       }
     );
