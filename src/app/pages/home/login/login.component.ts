@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         });
       },
       (error) => {
-        this.toastr.error('Tente Novamente!', 'Usuário ou Senha Inválidos!', {
+        this.toastr.error('Tente Novamente!', 'Usuário ou Senha Inválido!', {
           timeOut: 2500,
           progressBar: true,
         });
