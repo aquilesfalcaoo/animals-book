@@ -1,13 +1,25 @@
 <h4 class="text-center">Login</h4>
 
-<form class="form mt-4">
+<form class="form mt-4" (ngSubmit)="login()">
   <div class="form-group mb-3">
-    <input type="text" class="form-control" placeholder="Usuário" />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Usuário"
+      [(ngModel)]="usuario"
+      name="usuario"
+    />
   </div>
 
   <div class="form-group mb-4">
-    <input type="password" class="form-control" placeholder="Senha" />
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Senha"
+      [(ngModel)]="senha"
+      name="senha"
+    />
   </div>
 
-  <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+  <button type="submit" class="btn btn-outline-primary">Entrar</button>
 </form>
