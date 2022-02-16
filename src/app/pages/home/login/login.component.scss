@@ -1,7 +1,7 @@
 h4 {
   text-align: left;
   font-family: "Roboto", sans-serif;
-  color: #6fa9ff;
+  color: #005fed;
 }
 
 .form {
@@ -9,5 +9,9 @@ h4 {
   & button {
     width: 8rem;
     font-family: "Roboto", sans-serif;
+    border: 1px solid #005fed;
+    &:hover {
+      background: #005fed !important;
+    }
   }
 }
