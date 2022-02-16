@@ -1,6 +1,6 @@
 <h4>Login</h4>
 
-<form class="form mt-4" (ngSubmit)="login()">
+<form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
   <div class="form-group mb-3">
     <input
       type="text"
@@ -12,7 +12,7 @@
       required
     />
     <app-message
-      *ngIf="campoUsuario.invalid"
+      *ngIf="campoUsuario.invalid && campoUsuario.touched"
       mensagem="Usuário obrigatório!"
     ></app-message>
   </div>
@@ -28,10 +28,12 @@
       required
     />
     <app-message
-      *ngIf="campoSenha.invalid"
+      *ngIf="campoSenha.invalid && campoSenha.touched"
       mensagem="Senha obrigatória!"
     ></app-message>
   </div>
 
-  <button type="submit" class="btn btn-primary">Entrar</button>
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+    Entrar
+  </button>
 </form>
