@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication/authentication.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthenticationService,
     private spinner: NgxSpinnerService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -28,9 +30,10 @@ export class LoginComponent implements OnInit {
           this.spinner.hide();
         }, 1000);
         this.toastr.success('Logado com Sucesso!', 'Bem Vindo!', {
-          timeOut: 2500,
+          timeOut: 3000,
           progressBar: true,
         });
+        this.router.navigate(['animals']);
       },
       (error) => {
         this.toastr.error('Tente Novamente!', 'Usuário ou Senha Inválido!', {
