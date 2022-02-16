@@ -1,15 +1,15 @@
 .form-title {
   & h4 {
-    text-align: left;
+    text-align: left !important;
     font-family: "Roboto", sans-serif;
     color: #005fed;
   }
 }
 
-.form {
-  text-align: left;
+.form-button {
+  display: flex;
+  justify-content: flex-start;
   & button {
-    width: 8rem;
     font-family: "Roboto", sans-serif;
     border: 1px solid #005fed;
     &:hover {
