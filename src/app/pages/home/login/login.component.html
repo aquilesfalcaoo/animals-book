@@ -22,7 +22,7 @@
   <div class="form-group mb-4">
     <input
       type="password"
-      class="form-control"
+      class="form-control mb-3"
       placeholder="Senha"
       [(ngModel)]="senha"
       name="senha"
@@ -33,9 +33,17 @@
       *ngIf="campoSenha.invalid && campoSenha.touched"
       mensagem="A senha é obrigatória!"
     ></app-message>
+    <span
+      >Não possui conta? <a [routerLink]="['newuser']">Clique Aqui!</a></span
+    >
   </div>
-
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
-    Entrar
-  </button>
+  <div class="form-button">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loginForm.invalid"
+    >
+      Entrar
+    </button>
+  </div>
 </form>
