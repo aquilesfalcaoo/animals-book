@@ -2,18 +2,38 @@
   <h4>Registre-se e mostre o seu Pet!</h4>
 </div>
 
-<form class="form mt-4">
+<form class="form mt-4" [formGroup]="newUserForm" (submit)="cadastrar()">
   <div class="form-group mb-3">
-    <input class="form-control" type="text" placeholder="Email" />
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Email"
+      formControlName="email"
+    />
   </div>
   <div class="form-group mb-3">
-    <input class="form-control" type="text" placeholder="Nome Completo" />
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Nome Completo"
+      formControlName="fullName"
+    />
   </div>
   <div class="form-group mb-3">
-    <input class="form-control" type="text" placeholder="Usuário" />
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Usuário"
+      formControlName="userName"
+    />
   </div>
   <div class="form-group mb-3">
-    <input class="form-control" type="password" placeholder="Senha" />
+    <input
+      class="form-control"
+      type="password"
+      placeholder="Senha"
+      formControlName="password"
+    />
   </div>
   <span>Já possui uma conta? <a [routerLink]="['/']">Clique Aqui!</a></span>
   <div class="form-button mt-3">
