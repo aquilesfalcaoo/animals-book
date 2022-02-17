@@ -7,9 +7,17 @@
     <input
       class="form-control"
       type="text"
-      placeholder="Email"
+      placeholder="E-mail"
       formControlName="email"
     />
+    <app-message
+      *ngIf="newUserForm.get('email')?.errors?.['required'] && newUserForm.get('email')?.touched"
+      mensagem="E-mail obrigatório"
+    ></app-message>
+    <app-message
+      *ngIf="newUserForm.get('email')?.errors?.['email']  && newUserForm.get('email')?.touched"
+      mensagem="E-mail no formato incorreto"
+    ></app-message>
   </div>
   <div class="form-group mb-3">
     <input
@@ -18,6 +26,13 @@
       placeholder="Nome Completo"
       formControlName="fullName"
     />
+    <app-message
+      *ngIf="
+        newUserForm.get('fullName')?.errors &&
+        newUserForm.get('fullName')?.touched
+      "
+      mensagem="Nome incorreto"
+    ></app-message>
   </div>
   <div class="form-group mb-3">
     <input
