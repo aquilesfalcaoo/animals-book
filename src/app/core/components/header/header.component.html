@@ -1,3 +1,12 @@
+<ngx-spinner
+  bdColor="#005fed"
+  size="medium"
+  color="#fff"
+  type="ball-spin"
+  [fullScreen]="true"
+  ><p style="color: white">Carregando...</p></ngx-spinner
+>
+
 <header>
   <div class="container">
     <div class="row">
@@ -7,9 +16,9 @@
           <h4>Animals Feed</h4>
         </figure>
         <div class="icon-login" *ngIf="user$ | async as user">
-          <div *ngIf="user.name; else login">
+          <div class="logado" *ngIf="user.name; else login">
             <i class="fa fa-user"></i>
-            <a>{{ user.name }}</a>
+            <a class="cursor-none">{{ user.name }}</a>
             <a (click)="logout()">Sair</a>
           </div>
         </div>
