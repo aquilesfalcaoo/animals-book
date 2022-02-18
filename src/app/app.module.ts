@@ -6,16 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
-import { HeaderComponent } from './core/components/header/header.component';
+import { HeaderModule } from './core/components/header/header.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

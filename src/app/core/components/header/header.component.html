@@ -1,10 +1,24 @@
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-8 header-logo">
-        <img src="../../../../assets/img/favicon.png" alt="Logo" />
-        <h4>Animals Feed</h4>
+      <div class="col-12 header-logo">
+        <figure class="logo mb-0">
+          <img src="../../../../assets/img/favicon.png" alt="Logo" />
+          <h4>Animals Feed</h4>
+        </figure>
+        <div class="icon-login" *ngIf="user$ | async as user">
+          <div *ngIf="user.name; else login">
+            <i class="fa fa-user"></i>
+            <a>{{ user.name }}</a>
+            <a (click)="logout()">Sair</a>
+          </div>
+        </div>
       </div>
+      <ng-template #login>
+        <span>
+          <a [routerLink]="['']">Login</a>
+        </span>
+      </ng-template>
     </div>
   </div>
 </header>

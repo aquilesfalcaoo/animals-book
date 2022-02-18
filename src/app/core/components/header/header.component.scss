@@ -4,7 +4,12 @@ header {
   & .header-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
+    & .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
     & h4 {
       color: #000;
       margin: 0;
@@ -12,5 +17,21 @@ header {
       font-weight: 600;
       color: #005fed;
     }
+  }
+}
+
+.icon-login {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & i {
+    font-size: 1.5rem;
+  }
+  & a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #005fed;
+    text-decoration: none;
   }
 }
