@@ -6,10 +6,13 @@ import { NewUser } from 'src/app/shared/interface/new-user';
   providedIn: 'root',
 })
 export class NewUserService {
-  private readonly API = 'http://localhost:3000/user/signup';
   constructor(private http: HttpClient) {}
 
   cadastraNovoUsuario(newUser: NewUser) {
-    return this.http.post(`${this.API}`, newUser);
+    return this.http.post('http://localhost:3000/user/signup', newUser);
+  }
+
+  verificarUsuarioExistente(nomeUsuario: string) {
+    return this.http.get(`http://localhost:3000/user/exists/${nomeUsuario}`);
   }
 }

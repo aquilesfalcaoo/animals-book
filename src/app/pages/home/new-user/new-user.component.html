@@ -6,16 +6,16 @@
   <div class="form-group mb-3">
     <input
       class="form-control"
-      type="text"
+      type="email"
       placeholder="E-mail"
       formControlName="email"
     />
     <app-message
-      *ngIf="newUserForm.get('email')?.errors?.['required'] && newUserForm.get('email')?.touched"
+      *ngIf="this.newUserForm.get('email')?.errors?.['required'] && this.newUserForm.get('email')?.touched"
       mensagem="E-mail obrigatório"
     ></app-message>
     <app-message
-      *ngIf="newUserForm.get('email')?.errors?.['email']  && newUserForm.get('email')?.touched"
+      *ngIf="this.newUserForm.get('email')?.errors?.['email']  && this.newUserForm.get('email')?.touched"
       mensagem="E-mail no formato incorreto"
     ></app-message>
   </div>
@@ -28,8 +28,8 @@
     />
     <app-message
       *ngIf="
-        newUserForm.get('fullName')?.errors &&
-        newUserForm.get('fullName')?.touched
+        this.newUserForm.get('fullName')?.errors &&
+        this.newUserForm.get('fullName')?.touched
       "
       mensagem="Nome incorreto"
     ></app-message>
@@ -42,8 +42,12 @@
       formControlName="userName"
     />
     <app-message
-      *ngIf="newUserForm.get('userName')?.errors?.['lowercase'] && newUserForm.get('userName')?.touched"
+      *ngIf="this.newUserForm.get('userName')?.errors?.['lowercase'] && this.newUserForm.get('userName')?.touched"
       mensagem="O nome do usuário deve ser em letra minúscula"
+    ></app-message>
+    <app-message
+      *ngIf="this.newUserForm.get('userName')?.errors?.['usuarioExistente']"
+      mensagem="Usuário já cadastrado"
     ></app-message>
   </div>
   <div class="form-group mb-3">
@@ -53,8 +57,12 @@
       placeholder="Senha"
       formControlName="password"
     />
+    <app-message
+      *ngIf="this.newUserForm.errors?.['passwordEqualsUser']"
+      mensagem="A senha deve ser diferente do usuário!"
+    ></app-message>
   </div>
-  <span>Já possui uma conta? <a [routerLink]="['/']">Clique Aqui!</a></span>
+  <span>Já possui uma conta? <a routerLink="/">Clique Aqui!</a></span>
   <div class="form-button mt-3">
     <button class="btn btn-primary" type="submit">Cadastre-se</button>
   </div>

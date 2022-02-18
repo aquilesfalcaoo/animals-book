@@ -24,7 +24,8 @@ span {
 }
 
 a {
-  text-decoration: underline;
-  color: #005fed;
+  text-decoration: underline !important;
+  color: #005fed !important;
+  cursor: pointer;
   font-family: "Roboto", sans-serif;
 }
