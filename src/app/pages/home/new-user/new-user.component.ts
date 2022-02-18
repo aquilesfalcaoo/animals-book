@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 import { NewUserService } from 'src/app/core/services/new-user/new-user.service';
 import { UserExistsService } from 'src/app/core/services/new-user/user-exists.service';
-import { NewUser } from 'src/app/shared/interface/new-user';
+import { NewUser } from 'src/app/shared/interface/new-user/new-user';
 import { lowercaseValidator } from './lowercase.validator';
 import { userPasswordEqualsValidator } from './user-password-equals.validator';
 @Component({
