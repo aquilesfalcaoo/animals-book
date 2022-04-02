@@ -13,14 +13,20 @@
       <div class="col-12 header-logo">
         <figure class="logo mb-0">
           <img src="../../../../assets/img/favicon.png" alt="Logo" />
-          <h4>Animals Feed</h4>
+          <h1>Animals Feed</h1>
         </figure>
         <div class="icon-login" *ngIf="user$ | async as user">
-          <div class="logado" *ngIf="user.name; else login">
+          <div
+            class="logado"
+            *ngIf="user.name; else login"
+            [matMenuTriggerFor]="menu"
+          >
             <i class="fa fa-user"></i>
             <a class="cursor-none">{{ user.name }}</a>
-            <a (click)="logout()">Sair</a>
           </div>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">Sair</button>
+          </mat-menu>
         </div>
       </div>
       <ng-template #login>
