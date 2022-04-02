@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication/authentication.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -15,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthenticationService,
-    private spinner: NgxSpinnerService,
     private toastr: ToastrService,
     private router: Router
   ) {}
@@ -25,10 +23,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.autenticar(this.usuario, this.senha).subscribe(
       () => {
-        this.spinner.show();
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 1000);
         this.toastr.success('Logado com Sucesso!', 'Bem Vindo!', {
           timeOut: 3000,
           progressBar: true,

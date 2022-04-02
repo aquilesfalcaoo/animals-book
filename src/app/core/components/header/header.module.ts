@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { HeaderComponent } from './header.component';
-import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [CommonModule, RouterModule, NgxSpinnerModule, MatMenuModule],
+  imports: [CommonModule, RouterModule, MatMenuModule],
   exports: [HeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
