@@ -20,7 +20,7 @@ export class HeaderComponent {
   logout() {
     this.userService.logout();
     this.router.navigate(['']);
-    this.toastr.success('Desconectado!', 'Volte Sempre!', {
+    this.toastr.success('Volte Sempre!', 'Desconectado', {
       timeOut: 3000,
       progressBar: true,
     });

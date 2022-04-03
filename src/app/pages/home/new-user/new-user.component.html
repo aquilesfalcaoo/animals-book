@@ -31,7 +31,7 @@
         this.newUserForm.get('fullName')?.errors &&
         this.newUserForm.get('fullName')?.touched
       "
-      mensagem="Nome incorreto"
+      mensagem="Nome obrigatório"
     ></app-message>
   </div>
   <div class="form-group mb-3">
@@ -49,6 +49,10 @@
       *ngIf="this.newUserForm.get('userName')?.errors?.['usuarioExistente']"
       mensagem="Usuário já cadastrado"
     ></app-message>
+    <app-message
+      *ngIf="this.newUserForm.get('userName')?.errors?.['required'] && this.newUserForm.get('userName')?.touched"
+      mensagem="Usuário obrigatório"
+    ></app-message>
   </div>
   <div class="form-group mb-3">
     <input
@@ -60,6 +64,10 @@
     <app-message
       *ngIf="this.newUserForm.errors?.['passwordEqualsUser']"
       mensagem="A senha deve ser diferente do usuário!"
+    ></app-message>
+    <app-message
+      *ngIf="this.newUserForm.get('password')?.errors?.['required'] && this.newUserForm.get('password')?.touched"
+      mensagem="Senha obrigatória"
     ></app-message>
   </div>
   <span>Já possui uma conta? <a routerLink="/">Clique Aqui!</a></span>

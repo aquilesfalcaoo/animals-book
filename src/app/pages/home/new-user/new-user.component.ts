@@ -39,10 +39,11 @@ export class NewUserComponent implements OnInit {
         fullName: ['', [Validators.required, Validators.minLength(4)]],
         userName: [
           '',
+          [Validators.required],
           [lowercaseValidator],
           [this.userExists.usuarioJaExiste()],
         ],
-        password: [''],
+        password: ['', [Validators.required]],
       },
       {
         validators: [userPasswordEqualsValidator],
