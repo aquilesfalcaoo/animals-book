@@ -1,9 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication/authentication.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
-const API = 'http://localhost:3000';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
