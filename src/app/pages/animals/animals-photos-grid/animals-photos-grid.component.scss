@@ -1,0 +1,11 @@
+.grid-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  padding: 1rem 0;
+  & .photos-card {
+    display: grid;
+    border-radius: 0.2rem;
+  }
+}
