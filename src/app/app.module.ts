@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderModule } from './core/components/header/header.module';
+import { AnimalsModule } from './pages/animals/animals.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { HeaderModule } from './core/components/header/header.module';
     HttpClientModule,
     ToastrModule.forRoot(),
     HeaderModule,
+    AnimalsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

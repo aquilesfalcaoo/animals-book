@@ -9,6 +9,10 @@ const API = environment.apiURL;
   styleUrls: ['./animal.component.scss'],
 })
 export class AnimalComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+
   private originalURL = '';
 
   @Input() description = '';
@@ -23,8 +27,4 @@ export class AnimalComponent implements OnInit {
   get url(): string {
     return this.originalURL;
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

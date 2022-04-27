@@ -1,19 +1,20 @@
 <main class="container">
   <section class="grid-photos">
     <div *ngFor="let animal of animals" class="photos-card">
-      <a [routerLink]="['/animals', animal.id]"></a>
-      <app-card>
-        <app-animal
-          [url]="animal.url"
-          [description]="animal.description"
-        ></app-animal>
-        <!-- <i aria-hidden="true" class="fa fa-heart-o fa-1x ms-2">{{
+      <a [routerLink]="['/animals', animal.id]">
+        <app-card>
+          <app-animal
+            [url]="animal.url"
+            [description]="animal.description"
+          ></app-animal>
+          <!-- <i aria-hidden="true" class="fa fa-heart-o fa-1x ms-2">{{
           animal.likes
         }}</i>
         <i aria-hidden="true" class="fa fa-comment-o fa-1x ms-2 me-2">{{
           animal.comments
         }}</i> -->
-      </app-card>
+        </app-card>
+      </a>
     </div>
   </section>
 </main>
