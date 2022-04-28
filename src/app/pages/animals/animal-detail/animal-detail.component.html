@@ -9,12 +9,19 @@
     <div class="col-lg-4">
       <small>
         <p class="text-left break-word">{{ animal.description }}</p>
-        <i (click)="like()" class="fa fa-heart-o fa-2x ms-2">{{
+        <i (click)="like()" class="fa fa-heart-o fa-2x mx-2">{{
           animal.likes
         }}</i>
-        <i class="fa fa-comment-o fa-2x ms-2">{{ animal.comments }}</i>
-        <i (click)="delete()" class="fa fa-trash-o fa-2x ms-2"></i>
+        <i class="fa fa-comment-o fa-2x mx-2">{{ animal.comments }}</i>
+        <i (click)="delete()" class="fa fa-trash-o fa-2x mx-2"></i>
       </small>
+      <app-comments
+        [id]="animalId"
+        *ngIf="animal.allowComments; else warning"
+      ></app-comments>
+      <ng-template #warning>
+        <p>Usuário não pode comentar o animal.</p>
+      </ng-template>
     </div>
   </div>
 </article>
