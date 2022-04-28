@@ -9,6 +9,9 @@ import { AnimalsPhotosGridComponent } from './animals-photos-grid/animals-photos
 import { AnimalComponent } from './animal/animal.component';
 import { RouterModule } from '@angular/router';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
+import { CommentsComponent } from './animal-detail/comments/comments.component';
+import { MessageModule } from 'src/app/core/components/message/message.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
     AnimalsPhotosGridComponent,
     AnimalComponent,
     AnimalDetailComponent,
+    CommentsComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +27,8 @@ import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
     NgxSpinnerModule,
     CardModule,
     RouterModule,
+    MessageModule,
+    ReactiveFormsModule,
   ],
 })
 export class AnimalsModule {}

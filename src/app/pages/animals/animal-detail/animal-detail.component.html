@@ -1,4 +1,4 @@
-<article class="container" *ngIf="animal$ | async as animal">
+<article class="container animal-detail" *ngIf="animal$ | async as animal">
   <div class="row">
     <div class="col-lg-8">
       <app-animal
@@ -9,6 +9,11 @@
     <div class="col-lg-4">
       <small>
         <p class="text-left break-word">{{ animal.description }}</p>
+        <i (click)="like()" class="fa fa-heart-o fa-2x ms-2">{{
+          animal.likes
+        }}</i>
+        <i class="fa fa-comment-o fa-2x ms-2">{{ animal.comments }}</i>
+        <i (click)="delete()" class="fa fa-trash-o fa-2x ms-2"></i>
       </small>
     </div>
   </div>
