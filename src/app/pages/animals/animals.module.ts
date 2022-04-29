@@ -10,8 +10,7 @@ import { AnimalComponent } from './animal/animal.component';
 import { RouterModule } from '@angular/router';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import { CommentsComponent } from './animal-detail/comments/comments.component';
-import { MessageModule } from 'src/app/core/components/message/message.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgxSpinnerModule,
     CardModule,
     RouterModule,
-    MessageModule,
-    ReactiveFormsModule,
+    SharedModule,
   ],
 })
 export class AnimalsModule {}
