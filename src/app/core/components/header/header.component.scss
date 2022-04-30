@@ -6,9 +6,12 @@ header {
     align-items: center;
     justify-content: space-between;
     & .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      & a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+      }
     }
     & h1 {
       color: #000;

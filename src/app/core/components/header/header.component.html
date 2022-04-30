@@ -3,12 +3,14 @@
     <div class="row">
       <div class="col-12 header-logo">
         <figure class="logo mb-0">
-          <img
-            src="../../../../assets/img/favicon.png"
-            alt="Logo"
-            draggable="false"
-          />
-          <h1>Animals Feed</h1>
+          <a routerLink="/animals">
+            <img
+              src="../../../../assets/img/favicon.png"
+              alt="Logo"
+              draggable="false"
+            />
+            <h1>Animals Feed</h1>
+          </a>
         </figure>
         <div class="icon-login" *ngIf="user$ | async as user">
           <div
@@ -20,6 +22,7 @@
             <a class="cursor-none">{{ user.name }}</a>
           </div>
           <mat-menu #menu="matMenu">
+            <button mat-menu-item>Cadastrar</button>
             <button mat-menu-item (click)="logout()">Sair</button>
           </mat-menu>
         </div>

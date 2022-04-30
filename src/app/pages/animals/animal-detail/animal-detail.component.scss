@@ -8,4 +8,7 @@
 i {
   cursor: pointer;
   color: #005fed;
+  &::before{
+    padding-right: 0.5rem;
+  }
 }
