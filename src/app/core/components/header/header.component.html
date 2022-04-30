@@ -22,7 +22,9 @@
             <a class="cursor-none">{{ user.name }}</a>
           </div>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Cadastrar</button>
+            <a [routerLink]="['animals', 'new']"
+              ><button mat-menu-item>Cadastrar</button></a
+            >
             <button mat-menu-item (click)="logout()">Sair</button>
           </mat-menu>
         </div>
