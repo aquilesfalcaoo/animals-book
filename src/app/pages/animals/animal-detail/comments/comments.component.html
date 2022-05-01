@@ -3,7 +3,7 @@
     <li class="list-group-item" *ngFor="let comment of comments">
       <strong class="text-dark me-1">{{ comment.userName }}</strong>
       <em>{{ comment.date | date: "dd-MM-yyyy" }}</em>
-      <p class="break-word mb-2">{{ comment.text }}</p>
+      <p class="text-break mb-2">{{ comment.text }}</p>
     </li>
   </ul>
   <section class="mt-3">

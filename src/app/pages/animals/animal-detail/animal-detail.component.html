@@ -6,20 +6,29 @@
         [description]="animal.description"
       ></app-animal>
     </div>
-    <div class="col-lg-4">
-      <small class="list-group-item d-flex justify-content-between">
-        <div class="d-block">
-          <i (click)="like()" class="fa fa-heart-o fa-2x mx-2">{{
-            animal.likes
-          }}</i>
-          <i class="fa fa-comment-o fa-2x mx-2">{{ animal.comments }}</i>
+    <div class="col-lg-4 d-flex flex-column justify-content-between">
+      <div class="description list-group-item">
+        <small class="d-flex justify-content-between">
+          <div class="d-block">
+            <i (click)="like()" class="fa-regular fa-heart mx-2">{{
+              animal.likes
+            }}</i>
+            <i class="fa-regular fa-comment mx-2">{{ animal.comments }}</i>
+          </div>
+          <i
+            class="fa-solid fa-ellipsis-vertical mx-2"
+            [matMenuTriggerFor]="menuLateral"
+          ></i>
+          <mat-menu #menuLateral="matMenu">
+            <button mat-menu-item (click)="delete()">Excluir</button>
+          </mat-menu>
+        </small>
+        <div class="description-user px-2">
+          <p class="text-left text-break m-0">
+            {{ animal.description }}
+          </p>
         </div>
-        <i class="fa fa-bars fa-2x mx-2" [matMenuTriggerFor]="menuLateral"></i>
-        <mat-menu #menuLateral="matMenu">
-          <button mat-menu-item (click)="delete()">Excluir</button>
-        </mat-menu>
-      </small>
-      <p class="text-left break-word">{{ animal.description }}</p>
+      </div>
       <app-comments
         [id]="animalId"
         *ngIf="animal.allowComments; else warning"

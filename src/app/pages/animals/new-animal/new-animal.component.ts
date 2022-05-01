@@ -58,4 +58,8 @@ export class NewAnimalComponent implements OnInit {
     reader.onload = (event: any) => (this.preview = event.target.result);
     reader.readAsDataURL(file);
   }
+
+  feedBack() {
+    this.router.navigate(['/animals']);
+  }
 }
